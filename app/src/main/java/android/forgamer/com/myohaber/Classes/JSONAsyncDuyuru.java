@@ -1,7 +1,6 @@
 package android.forgamer.com.myohaber.Classes;
 
 import android.content.Context;
-import android.forgamer.com.myohaber.MainActivity;
 import android.forgamer.com.myohaber.R;
 import android.os.AsyncTask;
 import android.widget.ListView;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by The Flash on 19/04/2016.
  */
-public class JSONAsync extends AsyncTask<Object, Void, ArrayList<Duyuru>>
+public class JSONAsyncDuyuru extends AsyncTask<Object, Void, ArrayList<Duyuru>>
 {
     String site;
     ListView list;
