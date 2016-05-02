@@ -1,6 +1,7 @@
 package android.forgamer.com.myohaber.Classes;
 
 import android.content.Context;
+import android.forgamer.com.myohaber.Classes.Adapters.DuyuruAdapter;
 import android.forgamer.com.myohaber.R;
 import android.os.AsyncTask;
 import android.widget.ListView;
@@ -32,16 +33,16 @@ public class JSONAsyncDuyuru extends AsyncTask<Object, Void, ArrayList<Duyuru>>
         {
             if (json.getInt("basarili") == 1)
             {
-                JSONArray jsonArray = json.getJSONArray(Constants.JSON_FIELDS_DUYURULAR);
+                JSONArray jsonArray = json.getJSONArray(Constants.FIELD_DUYURU_DUYURULAR);
                 for (int i = 0; i < jsonArray.length(); i++)
                 {
                     Duyuru duyuru = new Duyuru();
                     JSONObject jsonDuyuru = jsonArray.getJSONObject(i);
-                    duyuru.setId(Integer.parseInt(jsonDuyuru.getString(Constants.JSON_FIELDS_ID)));
-                    duyuru.setLink(jsonDuyuru.getString(Constants.JSON_FIELDS_LINK));
-                    duyuru.setMesaj(jsonDuyuru.getString(Constants.JSON_FIELDS_MESAJ));
-                    duyuru.setTarih(jsonDuyuru.getString(Constants.JSON_FIELDS_TARIH));
-                    duyuru.setYazar(jsonDuyuru.getString(Constants.JSON_FIELDS_YAZAR));
+                    duyuru.setId(Integer.parseInt(jsonDuyuru.getString(Constants.FIELD_DUYURU_ID)));
+                    duyuru.setLink(jsonDuyuru.getString(Constants.FIELD_DUYURU_LINK));
+                    duyuru.setMesaj(jsonDuyuru.getString(Constants.FIELD_DUYURU_MESAJ));
+                    duyuru.setTarih(jsonDuyuru.getString(Constants.FIELD_DUYURU_TARIH));
+                    duyuru.setYazar(jsonDuyuru.getString(Constants.FIELD_DUYURU_YAZAR));
                     duyurular.add(duyuru);
                 }
             }

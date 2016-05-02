@@ -1,15 +1,13 @@
 package android.forgamer.com.myohaber.Activities;
 
-import android.net.Uri;
-import android.support.v4.app.FragmentManager;
 import android.forgamer.com.myohaber.Fragments.DuyuruFragment;
+import android.forgamer.com.myohaber.Fragments.ProgramFragment;
 import android.forgamer.com.myohaber.R;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-public class MainActivity extends AppCompatActivity implements DuyuruFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity implements DuyuruFragment.OnFragmentInteractionListener, NavigationView.OnNavigationItemSelectedListener
 {
 
     FrameLayout frameFragment;
@@ -33,16 +31,6 @@ public class MainActivity extends AppCompatActivity implements DuyuruFragment.On
         setSupportActionBar(toolbar);
 
         frameFragment = (FrameLayout) findViewById(R.id.frameFragment);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Snackbar.make(view, "Selam Gençlik", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -52,6 +40,20 @@ public class MainActivity extends AppCompatActivity implements DuyuruFragment.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fragmentYukle(new DuyuruFragment());
+    }
+
+    public void fragmentYukle(Fragment fragment)
+    {
+        if (fragment != null)
+        {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.frameFragment, fragment).commit();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     @Override
@@ -111,13 +113,7 @@ public class MainActivity extends AppCompatActivity implements DuyuruFragment.On
 
         } else if (id == R.id.nav_gallery)
         {
-
-        } else if (id == R.id.nav_slideshow)
-        {
-
-        } else if (id == R.id.nav_manage)
-        {
-
+            fragment = new ProgramFragment();
         } else if (id == R.id.nav_share)
         {
 

@@ -54,7 +54,7 @@ public class DuyuruFragment extends Fragment
         View v = inflater.inflate(R.layout.fragment_duyuru, container, false);
         // Inflate the layout for this fragment
         listDuyurular = (ListView) v.findViewById(R.id.listDuyurular);
-        new JSONAsyncDuyuru().execute(Constants.JSON_GET_ALL, listDuyurular, getActivity());
+        new JSONAsyncDuyuru().execute(Constants.JSON_DUYURU, listDuyurular, getActivity());
         return v;
     }
 

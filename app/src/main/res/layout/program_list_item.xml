@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ders"
+        android:id="@+id/tvDers"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Saat"
+        android:id="@+id/tvSaat"
+        android:layout_alignBottom="@+id/tvOgretmen"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Öğretmen"
+        android:id="@+id/tvOgretmen"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tvDers"
+        android:layout_centerHorizontal="true"
+        android:textSize="12dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Yer"
+        android:id="@+id/tvYer"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tvOgretmen"
+        android:layout_centerHorizontal="true"
+        android:textSize="12dp"
+        android:layout_marginBottom="5dp"/>
+</RelativeLayout>

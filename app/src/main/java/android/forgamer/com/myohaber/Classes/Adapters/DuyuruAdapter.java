@@ -1,7 +1,8 @@
-package android.forgamer.com.myohaber.Classes;
+package android.forgamer.com.myohaber.Classes.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.forgamer.com.myohaber.Classes.Duyuru;
 import android.forgamer.com.myohaber.R;
 import android.view.LayoutInflater;
 import android.view.View;
