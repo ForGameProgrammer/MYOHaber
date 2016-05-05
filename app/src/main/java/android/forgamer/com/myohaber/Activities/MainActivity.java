@@ -1,8 +1,10 @@
 package android.forgamer.com.myohaber.Activities;
 
+import android.content.Intent;
 import android.forgamer.com.myohaber.Fragments.DuyuruFragment;
 import android.forgamer.com.myohaber.Fragments.ProgramFragment;
 import android.forgamer.com.myohaber.R;
+import android.forgamer.com.myohaber.Services.RegistrationIntentService;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -40,8 +42,10 @@ public class MainActivity extends AppCompatActivity implements DuyuruFragment.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         fragmentYukle(new DuyuruFragment());
+        Intent intent = new Intent(this, RegistrationIntentService.class);
+        startService(intent);
+
     }
 
     public void fragmentYukle(Fragment fragment)
@@ -107,11 +111,11 @@ public class MainActivity extends AppCompatActivity implements DuyuruFragment.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Fragment fragment = null;
-        if (id == R.id.nav_camera)
+        if (id == R.id.nav_duyuru)
         {
             fragment = new DuyuruFragment();
 
-        } else if (id == R.id.nav_gallery)
+        } else if (id == R.id.nav_dersprogram)
         {
             fragment = new ProgramFragment();
         } else if (id == R.id.nav_share)

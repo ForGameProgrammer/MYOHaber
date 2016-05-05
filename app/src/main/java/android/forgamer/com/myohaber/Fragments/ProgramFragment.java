@@ -1,8 +1,8 @@
 package android.forgamer.com.myohaber.Fragments;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.forgamer.com.myohaber.Classes.Adapters.ProgramAdapter;
 import android.forgamer.com.myohaber.Classes.Constants;
 import android.forgamer.com.myohaber.Classes.Ders;
 import android.forgamer.com.myohaber.Classes.DersProgram;
@@ -11,6 +11,7 @@ import android.forgamer.com.myohaber.Classes.JSONFunctions;
 import android.forgamer.com.myohaber.Classes.Ogretmen;
 import android.forgamer.com.myohaber.Classes.Program;
 import android.forgamer.com.myohaber.Classes.Sinif;
+import android.forgamer.com.myohaber.R;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,13 +19,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.forgamer.com.myohaber.R;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -245,60 +243,7 @@ public class ProgramFragment extends Fragment
         }
     }
 
-    public class ProgramAdapter extends ArrayAdapter<Program>
-    {
-        ArrayList<Program> programlar;
-        int resId;
-        Context context;
 
-        public ProgramAdapter(Context context, int resource, ArrayList<Program> objects)
-        {
-            super(context, resource, objects);
-            programlar = objects;
-            resId = resource;
-            this.context = context;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent)
-        {
-            View row = convertView;
-            ProgramHolder holder = null;
-
-            if (row == null)
-            {
-                LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-                row = inflater.inflate(resId, parent, false);
-
-                holder = new ProgramHolder();
-                holder.tvSaat = (TextView) row.findViewById(R.id.tvSaat);
-                holder.tvOgretmen = (TextView) row.findViewById(R.id.tvOgretmen);
-                holder.tvYer = (TextView) row.findViewById(R.id.tvYer);
-                holder.tvDers = (TextView) row.findViewById(R.id.tvDers);
-
-                row.setTag(holder);
-            } else
-            {
-                holder = (ProgramHolder) row.getTag();
-            }
-            holder.tvDers.setText(programlar.get(position).getDersAdi());
-            int saat = programlar.get(position).getOgretim() == 2 ? position + 15 : position + 8;
-            int saat1 = saat + 1;
-            holder.tvSaat.setText(saat + ":15-" + saat1 + ":00");
-            holder.tvOgretmen.setText(programlar.get(position).getOgretmenAdi());
-            holder.tvYer.setText(programlar.get(position).getYer());
-
-            return row;
-        }
-
-        class ProgramHolder
-        {
-            TextView tvSaat;
-            TextView tvDers;
-            TextView tvOgretmen;
-            TextView tvYer;
-        }
-    }
 
 
     public void onButtonPressed(Uri uri)

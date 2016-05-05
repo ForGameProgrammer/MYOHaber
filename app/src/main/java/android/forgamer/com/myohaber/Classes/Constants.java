@@ -5,6 +5,8 @@ package android.forgamer.com.myohaber.Classes;
  */
 public class Constants
 {
+    public static String CIHAZ_EKLE = "http://myo.forgameprogrammer.com/cihaz_ekle.php";
+    public static String SENDER_API = "885606911814";
     public static String JSON_DUYURU = "http://myo.forgameprogrammer.com/get_all.php";
     public static String JSON_DERSPROGRAMI = "http://myo.forgameprogrammer.com/program.php";
     public static String FIELD_PROGRAM_ID = "ID";
