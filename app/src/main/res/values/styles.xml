@@ -1,10 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#2196F3</item>
         <item name="colorPrimaryDark">#1976D2</item>
-        <item name="colorAccent">#64B5F6</item>
+        <item name="colorAccent">#ff0044</item>
         <item name="drawerArrowStyle">@style/WhiteDrawerIconStyle</item>
     </style>
 
