@@ -13,7 +13,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "android.forgamer.com.myohaber"
+        applicationId "com.forgameprogrammer.myo.myohaber"
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
