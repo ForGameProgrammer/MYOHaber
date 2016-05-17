@@ -3,7 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="android.forgamer.com.myohaber.Fragments.ProgramFragment">
+              tools:context="android.forgamer.myo.myohaber.Fragments.ProgramFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <Spinner
